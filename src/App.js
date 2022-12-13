@@ -1,32 +1,39 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import Navbar from "./compenents/Navbar";
-import Main from "./Main";
 import styled from "styled-components";
 
-// styled-components
-const Wrapper = styled.nav`
-  height: 99vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+import Navbar from "./compenents/Navbar";
+import Main from "./pages/Main";
+import Author from "./pages/Author";
 
-  background-color: rgb(248, 247, 245);
+// styled-components
+const Wrapper = styled.div`
+    width: 800px;
+    height: 90vh;
+
+    background-color: #efe6db;
+
+    /* 가운데 정렬 */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 `;
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Wrapper>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Main />} />
-        </Routes>
-      </Wrapper>
-    </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <Wrapper>
+                <div className="app">
+                    <Navbar />
+                    <Routes>
+                        <Route path="/" element={<Main />} />
+                        <Route path="/author" element={<Author />} />
+                    </Routes>
+                </div>
+            </Wrapper>
+        </BrowserRouter>
+    );
 }
 
 export default App;
