@@ -3,7 +3,7 @@
     {
       "id": 1,
       "description": "todo app 만들기",
-      "isCompleted": false
+      "isCompleted": true
     },
     {
       "id": 2,
@@ -21,19 +21,29 @@
       "isCompleted": false
     },
     {
-      "description": "ㄴㅇㄹㄴㄹㅇㄴㄹㅇㄴㄹㄴㄹㄴ",
-      "isCompleted": false,
-      "id": 17
-    },
-    {
-      "description": "fskfld",
-      "isCompleted": false,
-      "id": 18
-    },
-    {
       "description": "엔터키를 눌렀다",
-      "isCompleted": false,
+      "isCompleted": true,
       "id": 20
+    },
+    {
+      "description": "생성하기",
+      "isCompleted": true,
+      "id": 21
+    },
+    {
+      "description": "삭제하기",
+      "isCompleted": true,
+      "id": 22
+    },
+    {
+      "description": "업데이트하기",
+      "isCompleted": false,
+      "id": 23
+    },
+    {
+      "description": "ssss",
+      "isCompleted": true,
+      "id": 24
     }
   ]
 }

@@ -41,18 +41,28 @@ const TodoListStyle = styled.div`
         border-radius: 10px;
 
         transition: all 0.2s ease;
-        &:hover {
-            transform: scale(1.05);
-            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        }
     }
 
     input {
-        margin-right: 10px;
+        width: 23px;
+        height: 23px;
+        border-radius: 5px;
+        border: 1px solid #999;
+        appearance: none;
         cursor: pointer;
 
-        width: 18px;
-        height: 18px;
+        &:checked {
+            background: #9f8473;
+            border: none;
+        }
+        &:checked::before {
+            content: "✔︎";
+            color: white;
+            font-size: 18px;
+            position: absolute;
+            right: 84.8%;
+            /* top: 0em; */
+        }
     }
 
     button {
@@ -66,6 +76,11 @@ const TodoListStyle = styled.div`
             color: black;
             transform: scale(1.1);
         }
+    }
+
+    .checked {
+        text-decoration: line-through #939496;
+        color: #939496;
     }
 `;
 
@@ -112,16 +127,41 @@ const TodoList = () => {
         console.log("delete!");
     };
 
+    // 투두 완료했니 토글 만들기
+    const handleIsComplete = (id, isCompleted) => {
+        let patchData = { isCompleted: !isCompleted };
+
+        fetch(`http://localhost:3001/todos/${id}`, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(patchData),
+        })
+            .then((res) => {
+                if (!res.ok) {
+                    throw Error("could not fetch the data for that resource");
+                }
+                return res.json();
+            })
+            .then(() => {
+                window.location.reload();
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+
+        console.log("modify!");
+    };
+
     return (
         <TodoListStyle>
             {isLoading && <Loading />}
             <ul>
                 {todos.map((todo) => (
                     <li key={todo.id}>
-                        <input type="checkbox" />
-                        <div>{todo.description}</div>
-                        <button onClick={() => handleDelete(todo.id)}>
-                            <i className="fa-solid fa-trash"></i>
+                        <input type="checkbox" onChange={() => handleIsComplete(todo.id, todo.isCompleted)} checked={todo.isCompleted} />
+                        <div className={todo.isCompleted ? "checked" : null}>{todo.description}</div>
+                        <button onClick={() => handleDelete(todo.id, todo.isCompleted)}>
+                            <i className="fa-solid fa-trash fa-lg"></i>
                         </button>
                     </li>
                 ))}
