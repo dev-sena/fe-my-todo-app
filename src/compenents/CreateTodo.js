@@ -6,7 +6,6 @@ import styled from "styled-components";
 const CreateTodoStyle = styled.div`
     display: flex;
     justify-content: center;
-    gap: 10px;
 
     input {
         width: 630px;
@@ -18,6 +17,7 @@ const CreateTodoStyle = styled.div`
     }
 
     button {
+        margin-left: 20px;
         border: none;
         padding: 15px 20px;
 
@@ -40,6 +40,13 @@ const CreateTodo = () => {
     const [description, setDescription] = useState("");
     const [isCompleted, setIsCompleted] = useState(false);
     const navigate = useNavigate();
+
+    // 엔터키를 감지하는 함수
+    const handleEnter = (e) => {
+        if (e.key === "Enter") {
+            handleCreate();
+        }
+    };
 
     // 투두를 생성버튼을 누르면 실행할 함수
     const handleCreate = (e) => {
@@ -64,10 +71,12 @@ const CreateTodo = () => {
 
     return (
         <CreateTodoStyle>
-            <input type="text" placeholder="할 일을 적어주세요!" value={description} onChange={(e) => setDescription(e.target.value)} required />
-            <button onClick={handleCreate}>
-                <i className="fa-solid fa-plus fa-2x"></i>
-            </button>
+            <form onKeyDown={handleEnter}>
+                <input type="text" placeholder="할 일을 적어주세요!" value={description} onChange={(e) => setDescription(e.target.value)} required />
+                <button onClick={handleCreate}>
+                    <i className="fa-solid fa-plus fa-2x"></i>
+                </button>
+            </form>
         </CreateTodoStyle>
     );
 };

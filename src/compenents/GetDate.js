@@ -8,7 +8,7 @@ const DateStyle = styled.div`
     display: flex;
     justify-content: center;
 
-    margin: 40px 0;
+    margin: 50px 0;
 `;
 
 // components

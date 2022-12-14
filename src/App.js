@@ -8,8 +8,7 @@ import Author from "./pages/Author";
 
 // styled-components
 const Wrapper = styled.div`
-    width: 800px;
-    height: 90vh;
+    height: 92vh;
 
     background-color: #efe6db;
     border-radius: 15px;

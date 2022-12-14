@@ -1,8 +1,13 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
+import Loading from "./Loading";
 
 // styled-components
-const TodoListStyle = styled.ul`
+const TodoListStyle = styled.div`
+    height: 63vh;
+    margin-top: 30px;
+
+    /* background-color: #c7b299; */
     font-family: "Gowun Dodum", sans-serif;
     font-size: 28px;
 
@@ -10,10 +15,21 @@ const TodoListStyle = styled.ul`
     flex-direction: column;
     align-items: center;
 
-    padding: 20px;
+    /* 스크롤 꾸밈 */
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        width: 14px;
+        height: 14px;
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0);
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #9f8473;
+        border-radius: 6px;
+    }
 
     li {
-        width: 93%;
+        width: 700px;
         display: grid;
         grid-template-columns: 1fr 12fr 1fr;
 
@@ -35,8 +51,8 @@ const TodoListStyle = styled.ul`
 
 // components
 const TodoList = () => {
-    // 투두를 가져오는데 필요한 상태
-    const [todos, setTodos] = useState([]);
+    const [todos, setTodos] = useState([]); // 투두를 가져오는데 필요한 상태
+    const [isLoading, setIsLoading] = useState(true);
 
     // 투두 가져오기
     useEffect(() => {
@@ -49,6 +65,7 @@ const TodoList = () => {
                     return res.json();
                 })
                 .then((data) => {
+                    setIsLoading(false);
                     setTodos(data);
                 })
                 .catch((err) => {
@@ -59,13 +76,16 @@ const TodoList = () => {
 
     return (
         <TodoListStyle>
-            {todos.map((todo) => (
-                <li key={todo.id}>
-                    <input type="checkbox" />
-                    <div>{todo.description}</div>
-                    {/* <button onClick={() => handlDelete(`${todo.id}`)}>X</button> */}
-                </li>
-            ))}
+            {isLoading && <Loading />}
+            <ul>
+                {todos.map((todo) => (
+                    <li key={todo.id}>
+                        <input type="checkbox" />
+                        <div>{todo.description}</div>
+                        {/* <button onClick={() => handlDelete(`${todo.id}`)}>X</button> */}
+                    </li>
+                ))}
+            </ul>
         </TodoListStyle>
     );
 };

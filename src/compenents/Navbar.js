@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 // styled-components
 const NavStyle = styled.nav`
-    width: 800px;
+    width: 900px;
     padding: 30px;
 
     display: grid;
