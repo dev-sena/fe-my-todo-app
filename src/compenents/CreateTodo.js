@@ -26,6 +26,7 @@ const CreateTodoStyle = styled.div`
 
         cursor: pointer;
 
+        transition: all 0.4s ease;
         &:hover {
             background-color: #9f8473;
             color: white;

@@ -12,6 +12,8 @@ const Wrapper = styled.div`
     height: 90vh;
 
     background-color: #efe6db;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
     /* 가운데 정렬 */
     position: absolute;
