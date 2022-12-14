@@ -19,7 +19,7 @@ const CreateTodoStyle = styled.div`
     button {
         margin-left: 20px;
         border: none;
-        padding: 15px 20px;
+        padding: 15px 18px;
 
         background-color: white;
         border-radius: 50%;

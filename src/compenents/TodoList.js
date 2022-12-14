@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Loading from "./Loading";
 
 // styled-components
@@ -38,6 +39,12 @@ const TodoListStyle = styled.div`
 
         background-color: white;
         border-radius: 10px;
+
+        transition: all 0.2s ease;
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
     }
 
     input {
@@ -47,10 +54,24 @@ const TodoListStyle = styled.div`
         width: 18px;
         height: 18px;
     }
+
+    button {
+        border: none;
+        background-color: white;
+        color: #9f8473;
+        font-size: 20px;
+        cursor: pointer;
+
+        &:hover {
+            color: black;
+            transform: scale(1.1);
+        }
+    }
 `;
 
 // components
 const TodoList = () => {
+    const navigate = useNavigate();
     const [todos, setTodos] = useState([]); // 투두를 가져오는데 필요한 상태
     const [isLoading, setIsLoading] = useState(true);
 
@@ -74,6 +95,23 @@ const TodoList = () => {
         }, 1000);
     }, []);
 
+    // 투두 삭제하기
+    const handleDelete = (id) => {
+        fetch(`http://localhost:3001/todos/${id}`, {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+        })
+            .then(() => {
+                navigate("/");
+                window.location.reload();
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+
+        console.log("delete!");
+    };
+
     return (
         <TodoListStyle>
             {isLoading && <Loading />}
@@ -82,7 +120,9 @@ const TodoList = () => {
                     <li key={todo.id}>
                         <input type="checkbox" />
                         <div>{todo.description}</div>
-                        {/* <button onClick={() => handlDelete(`${todo.id}`)}>X</button> */}
+                        <button onClick={() => handleDelete(todo.id)}>
+                            <i className="fa-solid fa-trash"></i>
+                        </button>
                     </li>
                 ))}
             </ul>
