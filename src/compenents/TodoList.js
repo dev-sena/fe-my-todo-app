@@ -5,7 +5,7 @@ import Loading from './Loading';
 
 // styled-components
 const TodoListStyle = styled.div`
-  height: 59vh;
+  height: 55vh;
   margin-top: 30px;
 
   font-family: 'Gowun Dodum', sans-serif;

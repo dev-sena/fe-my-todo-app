@@ -3,7 +3,7 @@
     {
       "id": 3,
       "description": "아침 먹기",
-      "isCompleted": true
+      "isCompleted": false
     },
     {
       "id": 4,

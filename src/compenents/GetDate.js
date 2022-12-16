@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 // styled-components
 const DateStyle = styled.div`
-  font-size: 25px;
+  font-size: 23px;
   font-family: 'Gowun Dodum', sans-serif;
 
   display: flex;
   justify-content: center;
 
-  margin: 50px 0;
+  margin: 40px 0;
 `;
 
 // components
