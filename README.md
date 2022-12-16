@@ -12,7 +12,7 @@ Todo 관리를 위한 웹 애플리케이션입니다.
 - D: 투두를 삭제할 수 있습니다.
 <br />
 - 2022.12.16: 완료한 목록과 미완료한 목록을 구분해주는 기능 
-- <br />
+<br />
 
 ## demo
 ![my-todo-demo](https://user-images.githubusercontent.com/111357232/208041057-0d465fb6-2cae-4632-ae53-0e5f5bf79aef.gif)
