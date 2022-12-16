@@ -1,37 +1,18 @@
-## Bare Minimum Requirement
-
-- [x] 과제 제출 여부를 확인할 수 있게, public으로 제작합니다.
-
-- [x] 아래 파일을 포함합니다.
-      [x] README.md
-      [x] .gitignore
-      [x] LICENSE
-
-- [x] Github Project 칸반
-      [x] Todo App을 직접 만든다고 생각하고 이슈, 마일스톤을 스스로 정해봅니다.
-      [x] Github Project 칸반을 만들고, 이슈와 마일스톤을 연결하고 칸반 뷰로 변경합니다
-
-- [x] Coz’ Git flow
-      [x] 직접 제작한 Github 리포지토리에 main, dev 브랜치를 만듭니다.
-      [x] dev 브랜치에서 main 브랜치로 Pull Request를 최소 1회 시도합니다.
-
-- [x] Create React App을 활용해 프론트엔드 개발에 유용한 프레임워크를 설치해봅니다.
-      [x] Redux
-      [x]Styled-Component
-      [x]ESLint, Prettier
-
-- [x] npm run start 가 에러없이 시작하는 코드를 원격 main 브랜치로 push 합니다.
-
-- [x] npm run start 로 리액트 개발 서버가 켜져있는 브라우저 화면을 캡쳐합니다.
-
 # Todo App
 
 Todo 관리를 위한 웹 애플리케이션입니다.
 
 ## Features
+- C: 투두를 생성할 수 있습니다.
+- R: 투두를 불러올 수 있습니다.
+- U
+- D: 투두를 삭제할 수 있습니다.
 
-- 편리한 UI로 Todo를 쉽게 생성하고 삭제할 수 있습니다.
 
 ## demo
-
+![my-todo-demo](https://user-images.githubusercontent.com/111357232/208041057-0d465fb6-2cae-4632-ae53-0e5f5bf79aef.gif)
 - 주소: https://dev-sena.github.io/fe-my-todo-app/
+
+## 앞으로 구현하고자 하는 것
+- 투두 수정기능
+- 달력 기능을 추가해 투두와 연동
