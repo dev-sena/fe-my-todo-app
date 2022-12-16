@@ -1,16 +1,6 @@
 {
   "todos": [
     {
-      "id": 1,
-      "description": "todo app 만들기",
-      "isCompleted": true
-    },
-    {
-      "id": 2,
-      "description": "안녕하세요",
-      "isCompleted": false
-    },
-    {
       "id": 3,
       "description": "아침 먹기",
       "isCompleted": false
@@ -18,7 +8,7 @@
     {
       "id": 4,
       "description": "강의 듣기",
-      "isCompleted": false
+      "isCompleted": true
     },
     {
       "description": "엔터키를 눌렀다",
@@ -37,13 +27,18 @@
     },
     {
       "description": "업데이트하기",
-      "isCompleted": false,
+      "isCompleted": true,
       "id": 23
     },
     {
       "description": "ssss",
       "isCompleted": true,
       "id": 24
+    },
+    {
+      "description": "안녕",
+      "isCompleted": true,
+      "id": 25
     }
   ]
 }
