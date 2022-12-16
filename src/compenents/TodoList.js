@@ -5,12 +5,12 @@ import Loading from './Loading';
 
 // styled-components
 const TodoListStyle = styled.div`
-  height: 63vh;
+  height: 59vh;
   margin-top: 30px;
 
   /* background-color: #c7b299; */
   font-family: 'Gowun Dodum', sans-serif;
-  font-size: 28px;
+  font-size: 23px;
 
   display: flex;
   flex-direction: column;
@@ -19,8 +19,8 @@ const TodoListStyle = styled.div`
   /* 스크롤 꾸밈 */
   overflow-y: scroll;
   &::-webkit-scrollbar {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     border-radius: 6px;
     background: rgba(255, 255, 255, 0);
   }
@@ -30,12 +30,12 @@ const TodoListStyle = styled.div`
   }
 
   li {
-    width: 700px;
+    width: 690px;
     display: grid;
     grid-template-columns: 1fr 12fr 1fr;
 
     margin: 10px 0;
-    padding: 15px 20px;
+    padding: 10px 15px;
 
     background-color: white;
     border-radius: 10px;
@@ -44,8 +44,8 @@ const TodoListStyle = styled.div`
   }
 
   input {
-    width: 23px;
-    height: 23px;
+    width: 20px;
+    height: 20px;
     border-radius: 5px;
     border: 1px solid #999;
     appearance: none;
@@ -58,10 +58,9 @@ const TodoListStyle = styled.div`
     &:checked::before {
       content: '✔︎';
       color: white;
-      font-size: 18px;
+      font-size: 15px;
       position: absolute;
-      right: 84.8%;
-      /* top: 0em; */
+      right: 89.4%;
     }
   }
 
