@@ -1,4 +1,4 @@
-### Bare Minimum Requirement
+## Bare Minimum Requirement
 
 - [x] 과제 제출 여부를 확인할 수 있게, public으로 제작합니다.
 
@@ -20,6 +20,18 @@
       [x]Styled-Component
       [x]ESLint, Prettier
 
-- [ ] npm run start 가 에러없이 시작하는 코드를 원격 main 브랜치로 push 합니다.
+- [x] npm run start 가 에러없이 시작하는 코드를 원격 main 브랜치로 push 합니다.
 
-- [ ] npm run start 로 리액트 개발 서버가 켜져있는 브라우저 화면을 캡쳐합니다.
+- [x] npm run start 로 리액트 개발 서버가 켜져있는 브라우저 화면을 캡쳐합니다.
+
+# Todo App
+
+Todo 관리를 위한 웹 애플리케이션입니다.
+
+## Features
+
+- 편리한 UI로 Todo를 쉽게 생성하고 삭제할 수 있습니다.
+
+## demo
+
+- 주소: https://dev-sena.github.io/fe-my-todo-app/
