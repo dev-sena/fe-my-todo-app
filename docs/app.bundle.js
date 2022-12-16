@@ -7312,7 +7312,7 @@ function CreateTodo_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = stri
 // styled-components
 
 
-var CreateTodoStyle = styled_components_browser_esm.div(CreateTodo_templateObject || (CreateTodo_templateObject = CreateTodo_taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n\n  input {\n    width: 630px;\n    padding: 10px;\n    font-size: 20px;\n\n    border: none;\n    border-radius: 10px;\n  }\n\n  button {\n    margin-left: 20px;\n    border: none;\n    padding: 10px 13px;\n\n    background-color: white;\n    border-radius: 50%;\n\n    cursor: pointer;\n\n    transition: all 0.4s ease;\n    &:hover {\n      background-color: #9f8473;\n      color: white;\n    }\n  }\n"])));
+var CreateTodoStyle = styled_components_browser_esm.div(CreateTodo_templateObject || (CreateTodo_templateObject = CreateTodo_taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n\n  input {\n    width: 600px;\n    padding: 10px;\n    font-size: 20px;\n\n    border: none;\n    border-radius: 10px;\n  }\n\n  button {\n    margin-left: 20px;\n    border: none;\n    padding: 10px 13px;\n\n    background-color: white;\n    border-radius: 50%;\n\n    cursor: pointer;\n\n    transition: all 0.4s ease;\n    &:hover {\n      background-color: #9f8473;\n      color: white;\n    }\n  }\n"])));
 
 // components
 var CreateTodo = function CreateTodo() {
@@ -7404,7 +7404,7 @@ function TodoList_taggedTemplateLiteral(strings, raw) { if (!raw) { raw = string
 // styled-components
 
 
-var TodoListStyle = styled_components_browser_esm.div(TodoList_templateObject || (TodoList_templateObject = TodoList_taggedTemplateLiteral(["\n  height: 59vh;\n  margin-top: 30px;\n\n  /* background-color: #c7b299; */\n  font-family: 'Gowun Dodum', sans-serif;\n  font-size: 23px;\n\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n\n  /* \uC2A4\uD06C\uB864 \uAFB8\uBC08 */\n  overflow-y: scroll;\n  &::-webkit-scrollbar {\n    width: 12px;\n    height: 12px;\n    border-radius: 6px;\n    background: rgba(255, 255, 255, 0);\n  }\n  &::-webkit-scrollbar-thumb {\n    background: #9f8473;\n    border-radius: 6px;\n  }\n\n  li {\n    width: 690px;\n    display: grid;\n    grid-template-columns: 1fr 12fr 1fr;\n\n    margin: 10px 0;\n    padding: 10px 15px;\n\n    background-color: white;\n    border-radius: 10px;\n\n    transition: all 0.2s ease;\n  }\n\n  input {\n    width: 20px;\n    height: 20px;\n    border-radius: 5px;\n    border: 1px solid #999;\n    appearance: none;\n    cursor: pointer;\n\n    &:checked {\n      background: #9f8473;\n      border: none;\n    }\n    &:checked::before {\n      content: '\u2714\uFE0E';\n      color: white;\n      font-size: 15px;\n      padding: 4px;\n    }\n  }\n\n  button {\n    border: none;\n    background-color: white;\n    color: #9f8473;\n    font-size: 20px;\n    cursor: pointer;\n\n    &:hover {\n      color: black;\n      transform: scale(1.1);\n    }\n  }\n\n  .checked {\n    text-decoration: line-through #939496;\n    color: #939496;\n  }\n"])));
+var TodoListStyle = styled_components_browser_esm.div(TodoList_templateObject || (TodoList_templateObject = TodoList_taggedTemplateLiteral(["\n  height: 59vh;\n  margin-top: 30px;\n\n  font-family: 'Gowun Dodum', sans-serif;\n\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n\n  /* \uC2A4\uD06C\uB864 \uAFB8\uBC08 */\n  overflow-y: scroll;\n  &::-webkit-scrollbar {\n    width: 10px;\n    height: 10px;\n    border-radius: 6px;\n    background: rgba(255, 255, 255, 0);\n  }\n  &::-webkit-scrollbar-thumb {\n    background: #9f8473;\n    border-radius: 6px;\n  }\n\n  li {\n    width: 660px;\n    display: grid;\n    grid-template-columns: 1fr 12fr 1fr;\n    align-items: center;\n\n    margin: 10px 0;\n    padding: 10px 15px;\n\n    background-color: white;\n    border-radius: 10px;\n    font-size: 18px;\n\n    transition: all 0.2s ease;\n  }\n\n  input {\n    width: 20px;\n    height: 20px;\n    border-radius: 5px;\n    border: 1px solid #999;\n    appearance: none;\n    cursor: pointer;\n\n    &:checked {\n      background: #9f8473;\n      border: none;\n    }\n    &:checked::before {\n      content: '\u2714\uFE0E';\n      color: white;\n      font-size: 15px;\n      padding: 4px;\n    }\n  }\n\n  button {\n    border: none;\n    background-color: white;\n    color: #9f8473;\n    font-size: 20px;\n    cursor: pointer;\n\n    &:hover {\n      color: black;\n      transform: scale(1.1);\n    }\n  }\n\n  .checked {\n    text-decoration: line-through #939496;\n    color: #939496;\n  }\n\n  .li-title {\n    margin: 10px 0;\n    font-size: 20px;\n  }\n"])));
 
 // components
 var TodoList = function TodoList() {
@@ -7474,9 +7474,45 @@ var TodoList = function TodoList() {
     });
     console.log('modify!');
   };
+
+  // 필터?
+  var completeTodo = todos.filter(function (el) {
+    return el.isCompleted === true;
+  });
+  var notCompleteTodo = todos.filter(function (el) {
+    return el.isCompleted === false;
+  });
   return /*#__PURE__*/(0,jsx_runtime.jsxs)(TodoListStyle, {
-    children: [isLoading && /*#__PURE__*/(0,jsx_runtime.jsx)(compenents_Loading, {}), /*#__PURE__*/(0,jsx_runtime.jsx)("ul", {
-      children: todos.map(function (todo) {
+    children: [isLoading && /*#__PURE__*/(0,jsx_runtime.jsx)(compenents_Loading, {}), isLoading ? null : /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+      className: "li-title",
+      children: "\uBBF8\uC644\uB8CC"
+    }), /*#__PURE__*/(0,jsx_runtime.jsx)("ul", {
+      children: notCompleteTodo.map(function (todo) {
+        return /*#__PURE__*/(0,jsx_runtime.jsxs)("li", {
+          children: [/*#__PURE__*/(0,jsx_runtime.jsx)("input", {
+            type: "checkbox",
+            onChange: function onChange() {
+              return handleIsComplete(todo.id, todo.isCompleted);
+            },
+            checked: todo.isCompleted
+          }), /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+            className: todo.isCompleted ? 'checked' : null,
+            children: todo.description
+          }), /*#__PURE__*/(0,jsx_runtime.jsx)("button", {
+            onClick: function onClick() {
+              return handleDelete(todo.id, todo.isCompleted);
+            },
+            children: /*#__PURE__*/(0,jsx_runtime.jsx)("i", {
+              className: "fa-solid fa-trash fa-lg"
+            })
+          })]
+        }, todo.id);
+      })
+    }), isLoading ? null : /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+      className: "li-title",
+      children: "\uC644\uB8CC"
+    }), /*#__PURE__*/(0,jsx_runtime.jsx)("ul", {
+      children: completeTodo.map(function (todo) {
         return /*#__PURE__*/(0,jsx_runtime.jsxs)("li", {
           children: [/*#__PURE__*/(0,jsx_runtime.jsx)("input", {
             type: "checkbox",
