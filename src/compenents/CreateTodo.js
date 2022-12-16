@@ -8,7 +8,7 @@ const CreateTodoStyle = styled.div`
   justify-content: center;
 
   input {
-    width: 630px;
+    width: 600px;
     padding: 10px;
     font-size: 20px;
 

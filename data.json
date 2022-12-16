@@ -3,7 +3,7 @@
     {
       "id": 3,
       "description": "아침 먹기",
-      "isCompleted": false
+      "isCompleted": true
     },
     {
       "id": 4,
@@ -44,11 +44,6 @@
       "description": "하이",
       "isCompleted": false,
       "id": 27
-    },
-    {
-      "description": "헬로우",
-      "isCompleted": false,
-      "id": 28
     }
   ]
 }

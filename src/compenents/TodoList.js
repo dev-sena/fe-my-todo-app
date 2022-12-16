@@ -8,9 +8,7 @@ const TodoListStyle = styled.div`
   height: 59vh;
   margin-top: 30px;
 
-  /* background-color: #c7b299; */
   font-family: 'Gowun Dodum', sans-serif;
-  font-size: 23px;
 
   display: flex;
   flex-direction: column;
@@ -19,8 +17,8 @@ const TodoListStyle = styled.div`
   /* 스크롤 꾸밈 */
   overflow-y: scroll;
   &::-webkit-scrollbar {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 6px;
     background: rgba(255, 255, 255, 0);
   }
@@ -30,15 +28,17 @@ const TodoListStyle = styled.div`
   }
 
   li {
-    width: 690px;
+    width: 660px;
     display: grid;
     grid-template-columns: 1fr 12fr 1fr;
+    align-items: center;
 
     margin: 10px 0;
     padding: 10px 15px;
 
     background-color: white;
     border-radius: 10px;
+    font-size: 18px;
 
     transition: all 0.2s ease;
   }
@@ -79,6 +79,11 @@ const TodoListStyle = styled.div`
   .checked {
     text-decoration: line-through #939496;
     color: #939496;
+  }
+
+  .li-title {
+    margin: 10px 0;
+    font-size: 20px;
   }
 `;
 
@@ -150,11 +155,34 @@ const TodoList = () => {
     console.log('modify!');
   };
 
+  // 필터?
+  const completeTodo = todos.filter((el) => el.isCompleted === true);
+  const notCompleteTodo = todos.filter((el) => el.isCompleted === false);
+
   return (
     <TodoListStyle>
       {isLoading && <Loading />}
+      {isLoading ? null : <div className="li-title">미완료</div>}
       <ul>
-        {todos.map((todo) => (
+        {notCompleteTodo.map((todo) => (
+          <li key={todo.id}>
+            <input
+              type="checkbox"
+              onChange={() => handleIsComplete(todo.id, todo.isCompleted)}
+              checked={todo.isCompleted}
+            />
+            <div className={todo.isCompleted ? 'checked' : null}>
+              {todo.description}
+            </div>
+            <button onClick={() => handleDelete(todo.id, todo.isCompleted)}>
+              <i className="fa-solid fa-trash fa-lg"></i>
+            </button>
+          </li>
+        ))}
+      </ul>
+      {isLoading ? null : <div className="li-title">완료</div>}
+      <ul>
+        {completeTodo.map((todo) => (
           <li key={todo.id}>
             <input
               type="checkbox"
