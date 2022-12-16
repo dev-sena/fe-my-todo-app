@@ -9,8 +9,8 @@ const CreateTodoStyle = styled.div`
 
   input {
     width: 630px;
-    padding: 15px;
-    font-size: 25px;
+    padding: 10px;
+    font-size: 20px;
 
     border: none;
     border-radius: 10px;
@@ -19,7 +19,7 @@ const CreateTodoStyle = styled.div`
   button {
     margin-left: 20px;
     border: none;
-    padding: 15px 18px;
+    padding: 10px 13px;
 
     background-color: white;
     border-radius: 50%;
@@ -38,7 +38,6 @@ const CreateTodoStyle = styled.div`
 const CreateTodo = () => {
   // 투두를 생성하기 위한 상태
   const [description, setDescription] = useState('');
-  const [isCompleted, setIsCompleted] = useState(false);
   const navigate = useNavigate();
 
   // 엔터키를 감지하는 함수
@@ -53,7 +52,7 @@ const CreateTodo = () => {
     e.preventDefault();
 
     // 요청을 보낼 데이터
-    const todo = { description, isCompleted };
+    const todo = { description, isCompleted: false };
 
     fetch('http://localhost:3001/todos', {
       method: 'POST',
@@ -71,12 +70,13 @@ const CreateTodo = () => {
 
   return (
     <CreateTodoStyle>
-      <form onKeyDown={handleEnter}>
+      <form>
         <input
           type="text"
           placeholder="할 일을 적어주세요!"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
+          onKeyDown={handleEnter}
           required
         />
         <button onClick={handleCreate}>

@@ -1,18 +1,17 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 // styled-components
 const NavStyle = styled.nav`
-  width: 900px;
-  padding: 30px;
+  width: 800px;
+  padding: 25px;
 
   display: grid;
   grid-template-columns: 9fr 1.6fr 1.4fr 0.8fr;
 
   background-color: #9f8473;
   color: white;
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 700;
 
   font-family: 'Gowun Dodum', sans-serif;
