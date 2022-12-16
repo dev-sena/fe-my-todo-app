@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 // styled-components
 const DateStyle = styled.div`
-  font-size: 30px;
+  font-size: 25px;
   font-family: 'Gowun Dodum', sans-serif;
 
   display: flex;
@@ -31,7 +31,7 @@ const GetDate = () => {
 
   return (
     <DateStyle>
-      {year}년 {month}월 {date}일 {getDay(day)}요일
+      오늘은 {year}년 {month}월 {date}일 {getDay(day)}요일!
     </DateStyle>
   );
 };
