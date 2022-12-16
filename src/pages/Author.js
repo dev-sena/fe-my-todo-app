@@ -2,12 +2,10 @@ import styled from 'styled-components';
 
 // style-components
 const AuthorStyle = styled.div`
-  height: 700px;
-
   /* 요소 전체 중앙 정렬 */
   position: absolute;
   left: 50%;
-  top: 60%;
+  top: 55%;
   transform: translate(-50%, -50%);
 
   /* 요소 각각 가운데 정렬 */
@@ -16,12 +14,12 @@ const AuthorStyle = styled.div`
   align-items: center;
 
   font-family: 'Gowun Dodum', sans-serif;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 700;
 
   .author-profile {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     background-color: #c8bfe7;
     margin-bottom: 50px;

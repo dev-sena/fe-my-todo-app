@@ -9,7 +9,7 @@ const LoadingStyle = styled.div`
   align-items: center;
 
   width: 500px;
-  height: 600px;
+  height: 500px;
 `;
 
 const Loading = () => {
