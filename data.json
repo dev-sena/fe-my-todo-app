@@ -12,7 +12,7 @@
     },
     {
       "description": "엔터키를 눌렀다",
-      "isCompleted": true,
+      "isCompleted": false,
       "id": 20
     },
     {
@@ -27,13 +27,8 @@
     },
     {
       "description": "업데이트하기",
-      "isCompleted": true,
+      "isCompleted": false,
       "id": 23
-    },
-    {
-      "description": "ssss",
-      "isCompleted": true,
-      "id": 24
     },
     {
       "description": "안녕",
@@ -41,14 +36,19 @@
       "id": 25
     },
     {
-      "description": "dd",
+      "description": "안녕하세요",
       "isCompleted": false,
       "id": 26
     },
     {
-      "description": "dksjlfkjalf",
+      "description": "dddd",
       "isCompleted": false,
       "id": 27
+    },
+    {
+      "description": "sdsdss",
+      "isCompleted": false,
+      "id": 28
     }
   ]
 }

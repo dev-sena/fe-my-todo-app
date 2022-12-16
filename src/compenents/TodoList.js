@@ -59,8 +59,7 @@ const TodoListStyle = styled.div`
       content: '✔︎';
       color: white;
       font-size: 15px;
-      position: absolute;
-      right: 89.4%;
+      padding: 4px;
     }
   }
 
